@@ -4,7 +4,7 @@
 
 Before starting, ensure that you have:
 
-- **A VPS running Ubuntu 20.04 or higher** (e.g., **DigitalOcean**, **Linode**).
+- **A VPS running Debian 11 or 12** (e.g., **DigitalOcean**, **Linode**).
 - **SSH access** to your server.
 - **A GitHub (or Git-based) repository** for your website files.
 - **A domain name** (for SSL setup with Let’s Encrypt).
@@ -13,9 +13,9 @@ Before starting, ensure that you have:
 
 ## Software and Tools to Install
 
-### 1. **Ubuntu 20.04 or Higher** (for the VPS)
+### 1. **Debian 11 or 12** (for the VPS)
 
-- You will need a **Virtual Private Server** (VPS) with **Ubuntu 20.04** or higher to run this project.
+- You will need a **Virtual Private Server** (VPS) with **Debian 11** or higher to run this project.
 - You can use providers like:
   - **[DigitalOcean](https://www.digitalocean.com)**
   - **[Linode](https://www.linode.com)**
@@ -51,7 +51,7 @@ Before starting, ensure that you have:
 
 To complete this project, you will need to install:
 
-- **Ubuntu 20.04** or higher on a VPS.
+- **Debian 11** or higher on a VPS.
 - **Nginx** as the web server.
 - **Git** for version control.
 - **Certbot** and **Let’s Encrypt** for SSL.
