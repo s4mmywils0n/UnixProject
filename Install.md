@@ -13,32 +13,22 @@ Before starting, ensure that you have:
 
 ## Software and Tools to Install
 
-### 1. **Debian 11 or 12** (for the VPS)
+###  **Debian 11 or 12** (for the VPS)
 
 - You will need a **Virtual Private Server** (VPS) with **Debian 11** or higher to run this project.
 - You can use providers like:
   - **[DigitalOcean](https://www.digitalocean.com)**
   - **[Linode](https://www.linode.com)**
 
-### 2. **Nginx** (Web Server)
+###  **Nginx** (Web Server)
 
 - **Nginx** is a high-performance web server used to serve your website.
 - Official website: **[Nginx](https://nginx.org)**
 
-### 3. **Git** (Version Control)
+###  **Git** (Version Control)
 
 - **Git** will allow you to clone and manage your website repository.
 - Official website: **[Git](https://git-scm.com)**
-
-### 4. **Certbot** (SSL Certificate Tool for HTTPS)
-
-- **Certbot** is used to obtain SSL certificates from **Let’s Encrypt** to secure your website with HTTPS.
-- Official website: **[Certbot](https://certbot.eff.org)**
-
-### 5. **Let’s Encrypt** (Free SSL Certificates)
-
-- **Let’s Encrypt** is a certificate authority that provides **free SSL certificates** for securing your website.
-- Official website: **[Let’s Encrypt](https://letsencrypt.org)**
 
 ### 6. **GitHub** (or Git-based Repository)
 
@@ -71,11 +61,6 @@ Before starting, ensure that you have:
    ```bash
    sudo apt install git -y
 ```
-   Allow necessary ports through the firewall:
-
-   ```bash
-sudo ufw allow 'Nginx Full'
-```
    Check the status of Nginx:
 
 ```bash
@@ -102,18 +87,24 @@ git clone https://github.com/yourusername/your-repository.git .
 Create a deploy.sh script that automates the deployment process, pulling the latest changes from the repository and restarting Nginx.
 
    Create the deploy.sh script:
-
+   
 ```bash
-sudo nano /var/www/html/deploy.sh
+sudo nano /var/www/html/UnixProject/deploy.sh
 ```
 Add the following content to the script:
 
 ```bash
 #!/bin/bash
+#Pull changes from the git repository
+cd /var/www/html/UnixProject
+git pull origin main
+#Restart Nginx to apply changes
+sudo systemctl restart ngninx
 ```
 ### Change to the web root directory
+```
 cd /var/www/html
-
+```
 ### Pull the latest changes from the Git repository
 ```
 git pull origin main
@@ -124,8 +115,6 @@ sudo systemctl restart nginx
 ```
 Make the script executable:
 
-bash
-Copy
 ```
 sudo chmod +x /var/www/html/deploy.sh
 ```
@@ -135,64 +124,42 @@ Set up a post-receive Git hook to automatically deploy changes whenever changes 
 
 Navigate to the Git hooks directory:
 
-bash
-Copy
+```bash
 cd /var/www/html/.git/hooks
+```
 Create the post-receive hook:
-
-bash
-Copy
-sudo nano post-receive
+```bash
+ sudo nano /var/www/html/UnixProject/.git/hooks/post-receive
+```
 Add the following content to the post-receive hook:
 
-bash
-Copy
+```bash
 #!/bin/bash
-
-### Call the deploy script
-/var/www/html/deploy.sh
+#Pull changes from the git repository
+cd /var/www/html/UnixProject
+git pull origin main
+#Restart Nginx to apply changes
+sudo systemctl restart ngninx
+```
 Make the hook executable:
 
-bash
-Copy
+```bash
 sudo chmod +x /var/www/html/.git/hooks/post-receive
+```
+
 ## 6. Push Changes to the Repository
 Once the Git hook is set up, you can push changes to the repository, and the website will automatically be updated on the server.
 
 Push changes from your local machine:
 
-bash
-Copy
+```bash
 git push origin main
+```
 The post-receive hook will trigger the deploy.sh script, pulling the latest changes and restarting Nginx.
 
-## 7. Set Up SSL with Let’s Encrypt (Optional, but Recommended)
-Install Certbot and Nginx plugin for SSL:
+## Extra Feature
+Firewall setup
+Certbot configuration
+Adding a Domain to replace ip address
 
-bash
-Copy
-sudo apt install certbot python3-certbot-nginx -y
-Obtain an SSL certificate for your domain:
 
-bash
-Copy
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
-Follow the prompts to complete the SSL setup.
-
-Test SSL certificate renewal:
-
-bash
-Copy
-sudo certbot renew --dry-run
-
-## Conclusion
-
-To complete this project, you will need to install:
-
-- **Debian 11** or higher on a VPS.
-- **Nginx** as the web server.
-- **Git** for version control.
-- **Certbot** and **Let’s Encrypt** for SSL.
-- A **GitHub repository** for storing and deploying your website files.
-
-Each of these tools and services will be used for the project’s deployment and automated update processes.
