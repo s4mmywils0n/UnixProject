@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web forms</title>
+    </head>
+    <body>
+        <h1>Working with Web Forms</h1>
+        <!-- Creating a web form  -->
+        <form action>
+            <!-- input box single line -->
+            <label for="txtUsername">Username:</label>
+            <input id="txtUsername" type="text"
+                placeholder="Enter your Username">
+            <br><br>
+            <label for="txtPassword">Password:</label>
+            <input id="txtPassword" type="password">
+            <br> <br>
+            <label for="txtPhone">Phone:</label>
+            <input id="txtPhone" type="tel" value placeholder="(xxx)-xxx-xxxx">
+            <br> <br>
+            <!-- check box -->
+            <label for="rdMonday">Monday:</label>
+            <input id="rdMonday" type="checkbox">
+            <label for="rdTuesday">Tuesday:</label>
+            <input id="rdTuesday" type="checkbox">
+            <br>
+            <label for="pkColor">Favorite Color:</label>
+            <input id="pkColor" type="color">
+            <br>
+            <!-- Fieldset for area  -->
+            <fieldset>
+                <legend>User Details:</legend>
+                <label for="pkDate">Date of Birth:</label>
+                <input type="date" name id="pkDate">
+                <br>
+                <!-- Multiple line text field  -->
+                <label for="txtComments">Comments:</label>
+                <br>
+                <textarea name id="txtComments" cols="30" rows="2"
+                    placeholder="Comment here"></textarea>
+            </fieldset>
+            <br>
+            <!-- Buttons for controlling the form  -->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+
+    </body>
+</html>

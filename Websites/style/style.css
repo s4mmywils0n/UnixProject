@@ -1,0 +1,180 @@
+/* * CSS Variables for Dark and Light Themes */
+:root[data-theme="dark"] {
+    --fb-background-color: #121213;
+    --fb-font-color: #f4f6f5;
+    --fb-theme-switch-bg-color: lightgray;
+    --container-background: #1e1e1e;
+    --nav-background: #222;
+    --gallery-background: #333;
+}
+
+:root[data-theme="light"] {
+    --fb-background-color: #f4f6f5;
+    --fb-font-color: #121213;
+    /* --fb-theme-switch-bg-color: rgb(80, 101, 73); */
+    --container-background: white;
+    --nav-background: #333;
+    --gallery-background: #e0e0e0;
+}
+
+/* Theme Switch Button */
+.theme-switch {
+    border-radius: 20px;
+    padding: 3px;
+    /* background-color: var(--fb-theme-switch-bg-color); */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fb-background-color);
+    color: var(--fb-font-color);
+}
+
+/* Container for the Page */
+#container {
+    width: 80%;
+    margin: auto;
+    background: var(--container-background);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Navigation Menu Styling */
+nav {
+    background-color: var(--nav-background);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    background-color: #444;
+    border: 2px solid #222;
+    border-radius: 5px;
+}
+
+/* Hover for nav links */
+nav ul li a:hover {
+    background-color: #555;
+    border-bottom: 3px solid #777;
+}
+
+/* Highlight Active Page*/
+#currentPage {
+    background-color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Gallery Picture Styling (Base) */
+#gallery figure {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    background: var(--gallery-background);
+    border-radius: 8px;
+    text-align: center;
+}
+
+#gallery figure img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/*Zoom*/
+.zoom-effect img {
+    transition: transform 0.3s ease;
+}
+
+.zoom-effect:hover img {
+    transform: scale(1.1);
+}
+
+/*Transition*/
+.transition-effect img {
+    filter: grayscale(100%);
+    /* timer for the grey to color */
+    transition: filter 0.5s ease;
+}
+
+.transition-effect:hover img {
+    filter: grayscale(0%);
+}
+
+/*Overlay*/
+.overlay-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-effect figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-effect:hover figcaption {
+    opacity: 1;
+}
+
+/* Extra styling */
+#noDecoration {
+    text-decoration: none;
+}
+
+button {
+    border-radius: 20px;
+}
+
+/* Table styling */
+#car-table {
+    width: 30%;
+    border-collapse: collapse;
+    border: 1px solid lightgray;
+}
+
+#car-table tbody>tr:nth-child(odd) {
+    background-color: #ffcc00;
+}
+
+#hover-table:hover {
+    background-color: lightblue;
+    border-bottom: 3px solid #777;
+}
+
+/* Grid styling */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.grid-item {
+    background-color: lightcoral;
+    border: 1px solid blue;
+}
