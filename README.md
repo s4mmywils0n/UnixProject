@@ -23,14 +23,3 @@ Before starting, you will need:
   - Required for setting up **SSL certificates** using **Let’s Encrypt** for secure HTTPS.
 
 ---
-
-This project automates the deployment of website updates using Git, Nginx, and Let’s Encrypt. Every time changes are pushed to the Git repository, the server automatically updates the website and restarts Nginx to serve the updated content.
-
-With SSL set up via Let’s Encrypt, your website will also be securely served via HTTPS, ensuring encrypted communication.
-
-Additional Notes
-GitHub Repository: Make sure the repository is properly set up with all website files before deployment.
-
-Nginx Configuration: Ensure Nginx is configured to serve the correct website files from /var/www/html.
-
-SSL: Setting up SSL with Let’s Encrypt ensures that your website is served securely over HTTPS.
