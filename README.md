@@ -1,38 +1,36 @@
-# UnixProject
-This is where we're gonna store the code for our git work
-Automated Website Deployment with GNU/Linux Web Server
+# Automated Website Deployment with GNU/Linux Web Server
 
-Project Description
+## Project Description
 
-This project involves setting up a GNU/Linux web server on a Virtual Private Server (VPS) to automate the deployment of websites that we have made in our Internet Programming course this semester. The server is configured using Ubuntu and will process web pages through Nginx system. Every time a commit or change in the files is pushed to a Git repository, the website will be automatically updated with those changes. It will make it easier for designing and updating the website without having to re-upload the project files. 
+This project involves setting up a **GNU/Linux web server** on a **Virtual Private Server (VPS)** to automate the deployment of websites created during the **Internet Programming** course. The server will run **Debiam** and process web pages using **Nginx**. 
 
-Getting Started
-	Prerequisites
+Every time a **commit** or **change** in the files is pushed to a **Git repository**, the website will be automatically updated. This eliminates the need to manually re-upload project files after every change, making it easier to design, test, and deploy updates to the website efficiently.
 
-1.A VPS running Ubuntu (20.04 or higher).
-2.A GitHub (or Git-based) repository for the website files.
-3.A domain name and access to DNS settings (for setting up SSL certificates with Let’s Encrypt).
+---
 
-Steps to Install
+## Getting Started
 
-Set Up the VPS:
-	Choose a VPS provider (e.g., DigitalOcean, Linode).
-	Create an instance running Ubuntu 20.04.
-	Access your server via SSH.
+Before starting, you will need:
 
-Install Dependencies:
-	Update the system and install required software
-	Install Nginx and ensure it is running
-	Allow necessary ports through the firewall:
+- **A VPS running Ubuntu 20.04 or higher**:
+  - You can use any VPS provider (e.g., **DigitalOcean**, **Linode**).
+  - The server should have **SSH** access enabled for remote configuration.
 
-Create a Git Repository:
-	Navigate to the web root and initialize a Git repository:
-	Clone your website repository into the server:
-Set Up Deployment Script:
-	Create a deploy.sh script that pulls the latest changes and restarts Nginx:
-	Make the script executable:
-	
-Configure Git Hook:
-	Go to the Git hooks directory and create the post-receive hook:
-	Make the hook executable:
-  Push changes to the repository, and the post-receive hook will automatically trigger the deployment process, updating the 	website and restarting Nginx 
+- **A GitHub (or Git-based) repository**:
+  - Store your website files in a Git repository for easy version control and automated deployment.
+
+- **A domain name and access to DNS settings**:
+  - Required for setting up **SSL certificates** using **Let’s Encrypt** for secure HTTPS.
+
+---
+
+This project automates the deployment of website updates using Git, Nginx, and Let’s Encrypt. Every time changes are pushed to the Git repository, the server automatically updates the website and restarts Nginx to serve the updated content.
+
+With SSL set up via Let’s Encrypt, your website will also be securely served via HTTPS, ensuring encrypted communication.
+
+Additional Notes
+GitHub Repository: Make sure the repository is properly set up with all website files before deployment.
+
+Nginx Configuration: Ensure Nginx is configured to serve the correct website files from /var/www/html.
+
+SSL: Setting up SSL with Let’s Encrypt ensures that your website is served securely over HTTPS.
