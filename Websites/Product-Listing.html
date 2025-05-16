@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-page="listing">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">    <link rel="stylesheet" href="/AutopartsStore/css/Style.css">
+</head>
+<body>
+
+    <!-- Theme Toggle -->
+   <input type="checkbox" id="theme-toggle" hidden />
+   <label for="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
+     <span class="sun">☀️</span>
+     <span class="moon">🌙</span>
+   </label>
+   
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Home.html"> <img src="images/b9538802-0031-4cf1-9e27-7aed700611a2.png" alt="Store Logo"></a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <!-- Add Images later -->
+        <div class="nav-links">
+            <a href="Product-Listing.html">Products</a>
+            <a href="Shopping-Cart.html">Cart</a>
+            <a href="Account.html">Account</a>
+        </div>
+    </nav>
+    
+    <!-- Header for the page  -->
+    <Header class="page-header">
+        <h1>All Products</h1>
+    </Header>
+
+<!-- breadcrumb/ directory  -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="Home.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">All Products</li>
+      </ol>
+    </nav>
+    
+    <!-- Sort by tab  -->
+    <section class="filtering">
+        <div class="filter">
+            <label for="category">Sort By:</label>
+            <select  id="category">
+                <option value="all">Lowest Price</option>
+                <option value="exhaust"> Highest Price</option>
+                <option value="turbo">Best Ratings</option>
+            </select>
+        </div>
+
+    </section>
+    <!-- Product Listings -->
+    <main class = "product-list container my-5"></main>
+<!-- Page navigation  -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <!-- <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li> -->
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- footer section  -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Customer Service -->
+            <div class="footer-section">
+              <h3>Customer Service</h3>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+        
+            <!-- Account Section -->
+            <div class="footer-section">
+              <h3>Your Account</h3>
+              <ul>
+                <li><a href="Account.html">Account information</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+              </ul>
+            </div>
+        
+            <!-- Extra Resources -->
+            <div class="footer-section">
+              <h3>Shop</h3>
+              <ul>
+                <li><a href="#">Shop by Category</a></li>
+                <li><a href="#">Shop by Brand</a></li>
+                <li><a href="#">Discount Items</a></li>
+              </ul>
+            </div>
+        
+            <!-- Social Media -->
+            <div class="footer-section">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Autoparts Store. All rights reserved.</p>
+          </div>
+    </footer>
+
+    <!-- Cart Feedback Modal -->
+<div class="modal fade" id="cartFeedbackModal" tabindex="-1" aria-labelledby="cartFeedbackLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartFeedbackLabel">Cart Updated</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- This is where we’ll inject our message -->
+        <p id="cartFeedbackMessage">Item Added to Cart successfully</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Java script links keep at bottom always  -->
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

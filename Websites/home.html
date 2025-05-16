@@ -1,99 +1,148 @@
-<!-- 
-    Assignment 2 - BMW M Series
-    Willkerdy Elveus 
-    18/02/2025 
--->
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BMW M Series - Home</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="icon" type="image/png" href="Images/home-button.png" />
-  </head>
-  <body>
-    <div id="container">
-      <!-- Header Section -->
-      <header><h1>BMW M Series</h1></header>
-      <!--Theme Toggle -->
-      <div class="theme-switch">
-        <button onclick="document.documentElement.setAttribute('data-theme','dark');">Dark 🌔</button>
-        <button onclick="document.documentElement.setAttribute('data-theme','light');">Light 🌕</button>
+<html lang="en" data-page="home">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/AutopartsStore/css/Style.css">
+</head>
+<body>
+
+   <!-- Theme Toggle -->
+   <input type="checkbox" id="theme-toggle" hidden />
+   <label for="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
+     <span class="sun">☀️</span>
+     <span class="moon">🌙</span>
+   </label>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+      <a href="Home.html"> <img src="images/b9538802-0031-4cf1-9e27-7aed700611a2.png" alt="Store Logo"></a>
+  </div>
+  <!-- Add Images later -->
+  <div class="nav-links">
+      <a id="link-show-cart" href="Product-Listing.html">Products</a>
+      <a href="Shopping-Cart.html">Cart</a>
+      <a href="Account.html">Account</a>
+      <a href="map.html">Map</a>
+      
+  </div>
+</nav>
+ <!-- Carousel for the items    -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/360_F_89850844_YGSGp8OPRTpJsNyKOuQN1Fsl1zUlQpeo.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
       </div>
-      <!-- Navigation Menu -->
-      <nav>
-        <ul>
-          <li><a href="home.html" id="currentPage">Home</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="lists.html">Lists</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="Table.html">Table</a></li>
-        </ul>
-      </nav>
-      <!-- Main Content -->
-      <main>
-        <article>
-          <section id="intro">
-            <h2>introduction5</h2>
-            <p>
-              BMW M Series cars represent the pinnacle of performance and
-              engineering. Born from a rich motorsport heritage, these vehicles
-              combine luxury with high-performance innovations.
-            </p>
-          </section>
-          <hr />
-          <section>
-            <h2>History</h2>
-            <p>
-              BMW began producing automobiles in 1928 after acquiring
-              Fahrzeugfabrik Eisenach. In the 1930s, the company established its
-              reputation with high-performance vehicles! The introduction of the
-              BMW New Class in 1962 marked a turning point, solidifying BMW as a
-              premier manufacturer of sporty, high-quality cars.
-            </p>
-            <p>
-              <dfn>BMW M</dfn> (<b>Bayerische Motoren Werke</b>) was originally
-              founded to support BMW’s motorsport division, which saw tremendous
-              success in the 1960s &amp; 1970s! M-badged vehicles feature
-              high-performance modifications like enhanced engines, upgraded
-              suspensions, and aerodynamic improvements. Rigorous testing at
-              BMW’s Nürburgring facility ensures precision and performance.
-            </p>
-          </section>
-          <hr />
-          <section>
-            <h2>The M1</h2>
-            <p>
-              The BMW 1 Series is a range of subcompact executive cars
-              (C-segment) produced since 2004. As the successor to the BMW 3
-              Series Compact, it is available in hatchback, coupé, and
-              convertible body styles – serving as the entry-level model in
-              BMW’s lineup.
-            </p>
-          </section>
-          <hr />
-          <section>
-            <h2>The X1</h2>
-            <p>
-              The BMW X1 is a subcompact luxury crossover introduced in 2009 and
-              is based on the E90 3 Series platform. It’s known for combining
-              performance with practicality.
-            </p>
-          </section>
-        </article>
-        <!-- External Link -->
-        <p>
-          <a href="https://en.wikipedia.org/wiki/BMW" id="noDecoration" target="_blank"
-            >Visit Sources</a
-          >
-        </p>
-      </main>
-      <button><a href="#top" id="noDecoration">Back To Top &UpArrowBar;</a></button>
-      <!-- Footer -->
-      <footer>
-        <p>&copy; Willkerdy Elveus 18/02/2025</p>
-      </footer>
     </div>
-  </body>
+    <div class="carousel-item">
+      <img src="images/360_F_89850847_XMDlBNzweDnjvPbkjD1PigAVScHSKKnh.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/360_F_89850856_B2T5QVSvqyap1cUE34Of2Z6zXbMrkDQm.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Product Listings -->
+<main class = "product-list container my-5"></main>
+ <!-- Footer section  -->
+  <footer class="site-footer">
+        <div class="footer-container">
+  
+          <!-- Customer Service -->
+          <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+      
+          <!-- Account Section -->
+          <div class="footer-section">
+            <h3>Your Account</h3>
+            <ul>
+              <li><a href="Account.html">Account information</a></li>
+              <li><a href="Shopping-Cart.html">View Cart</a></li>
+            </ul>
+          </div>
+      
+          <!-- Extra Resources -->
+          <div class="footer-section">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="#">Shop by Category</a></li>
+              <li><a href="#">Shop by Brand</a></li>
+              <li><a href="#">Discount Items</a></li>
+            </ul>
+          </div>
+      
+          <!-- Social Media -->
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 Autoparts Store. All rights reserved.</p>
+        </div>
+  </footer>
+
+  <!-- Cart Feedback Modal -->
+<div class="modal fade" id="cartFeedbackModal" tabindex="-1" aria-labelledby="cartFeedbackLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartFeedbackLabel">Cart Updated</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- This is where we’ll inject our message -->
+        <p id="cartFeedbackMessage">Item Added to Cart successfully</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Java script links keep at bottom always  -->
+  <script type="module" src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
 </html>
