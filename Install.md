@@ -157,6 +157,27 @@ git push origin main
 ```
 The post-receive hook will trigger the deploy.sh script, pulling the latest changes and restarting Nginx.
 
+## 7. Direct the server directory to your website files
+```bash
+sudo nano /etc/nginx/sites-available/UnixProjectWebsite
+```
+Once inside that file input the directory for your files:
+
+```bash
+server {
+    listen 80;
+    server_name your_ip_address or domain;
+
+    root /var/www/html/UnixProject/Websites;
+    index home.html home.htm;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+You can change the "server_name" to either the ip of your vps or to the Domain name that you have purchased
+You also need to change the root directory to match the directory 
 ## Extra Feature
 Firewall setup
 Certbot configuration
